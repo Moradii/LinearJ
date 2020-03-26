@@ -16,7 +16,7 @@
 # Installation
 
        require(remotes)
-       install_github('Moradii/Linear-J-function')
+       install_github('Moradii/LinearJ')
 
 
 ##### Warning: The calculation of summary statistics is currently slow. 
