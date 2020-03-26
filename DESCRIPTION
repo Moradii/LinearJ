@@ -1,14 +1,13 @@
 Package: LinearJ
 Type: Package
 Title: Higher-order summary statistics for point patterns on linear networks
-Version: 0.1.3
+Version: 0.1.4
 Author: person("Mehdi", "Moradi", email = "m2.moradi@yahoo.com",
   role = c("aut", "cre"))
 Maintainer: Mehdi Moradi <m2.moradi@yahoo.com>
-Description: Simulating Simple Sequential Inhibition point patterns on linear networks, estimating inhomogeneous empty space, inhomogeneous nearest neighbour, and J-function for point patterns on linear networks, together with simulating envelopes of them.
 Depends: R (>= 3.3.0), spatstat(>= 1.61-0)
 Imports: stats, graphics, utils 
 License: GPL (>= 2)
 Encoding: UTF-8
 LazyData: true
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.0

@@ -1,16 +1,16 @@
 \name{plot.linearJ}
 \alias{plot.linearJ}
 \title{
-plot method.
+Plot method.
 }
 \description{
-plot method.
+Plot method.
 }
 \usage{
-plot.linearJ(X, ...)
+\method{plot}{linearJ}(x, ...)
 }
 \arguments{
-  \item{X}{
+  \item{x}{
 an object.
 }
 \item{\dots}{
@@ -18,5 +18,5 @@ an object.
 }
 }
 \author{
-Mehdi Moradi <m2.moradi@yahoo.com>
+Mehdi Moradi \email{m2.moradi@yahoo.com}
 }

@@ -1,21 +1,21 @@
 \name{plot.envelopeJ}
 \alias{plot.envelopeJ}
 \title{
-plot method.
+Plot method.
 }
 \description{
-plot method.
+Plot method.
 }
 \usage{
-plot.envelopeJ(X,cex.legend=1,...)
+\method{plot}{envelopeJ}(x,cex.legend=1,...)
 }
 \arguments{
-  \item{X}{
+  \item{x}{
 an envelope object.
 }
 \item{cex.legend}{size of legend.}
 \item{...}{optional.}
 }
 \author{
-Mehdi Moradi <m2.moradi@yahoo.com>
+Mehdi Moradi \email{m2.moradi@yahoo.com}
 }

@@ -1,3 +1,6 @@
+#' @import spatstat
+#' @import stats
+#' @import utils
 #' @export
 border.lpp <- function(X){
 
@@ -25,7 +28,6 @@ border.lpp <- function(X){
   bordery <- verticesy[which(rowsum==1)]
 
    borderpoints <- lpp(data.frame(borderx,bordery),l,check=FALSE)
-  # if (any(class(X)=="lpp")) borderpoints <- lpp(data.frame(borderx,bordery),domain(X),check=FALSE)
 
   return(borderpoints)
 }

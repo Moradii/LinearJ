@@ -1,3 +1,7 @@
+#' @import spatstat
+#' @import stats
+#' @import utils
+#' @import graphics
 #' @export
 J.envelope.lpp <- function(X,Y,lambda=NULL,fun=LinearJinhom,nsim=19,nrank=1,Interval=TRUE,prob=0.025,seed=1234,verbose=TRUE,...){
 
@@ -77,22 +81,22 @@ print.envelopeJ <- function(X){
   cat("envelope for inohomogeneous Linear J-function");
 }
 #' @export
-plot.envelopeJ <- function(X,cex.legend=1,...){
+plot.envelopeJ <- function(x,cex.legend=1,...){
 
-  plot(X$r,X$lower,type = "n",xlab = "r",
+  plot(x$r,x$lower,type = "n",xlab = "r",
        ylab=expression(italic(J[L][","][inhom](r))),
-       ylim = c(min(X$lower,attr(X,"Jmain")$LinearJinhom),max(X$Upper,attr(X,"Jmain")$LinearJinhom)),
+       ylim = c(min(x$lower,attr(x,"Jmain")$LinearJinhom),max(x$Upper,attr(x,"Jmain")$LinearJinhom)),
        ...)
 
-  lines(X$r,X$lower,type="l",col="white")
-  lines(X$r,X$Upper,type="l",col="white")
+  lines(x$r,x$lower,type="l",col="white")
+  lines(x$r,x$Upper,type="l",col="white")
 
-  polygon(c(X$r, rev(X$r)), c(X$Upper, rev(X$lower)),col = "grey70", border = NA)
+  polygon(c(x$r, rev(x$r)), c(x$Upper, rev(x$lower)),col = "grey70", border = NA)
 
-  points(X$r,attr(X,"Jmain")$LinearJinhom,type="l",...)
-  points(X$r,rep(1,length(X$r)),type="l",lty=2,col=2,...)
+  points(x$r,attr(x,"Jmain")$LinearJinhom,type="l",...)
+  points(x$r,rep(1,length(x$r)),type="l",lty=2,col=2,...)
 
-  if (abs(max(X$Upper,attr(X,"Jmain")$LinearJinhom)-1) > abs(min(X$lower,attr(X,"Jmain")$LinearJinhom)-1)){
+  if (abs(max(x$Upper,attr(x,"Jmain")$LinearJinhom)-1) > abs(min(x$lower,attr(x,"Jmain")$LinearJinhom)-1)){
 
     legend("topleft",inset = 0.05,
            legend = c(expression(italic(hat(J)[L][","][inhom](r))),

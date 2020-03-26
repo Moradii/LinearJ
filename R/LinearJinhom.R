@@ -1,3 +1,7 @@
+#' @import spatstat
+#' @import stats
+#' @import utils
+#' @import graphics
 #' @export
 LinearJinhom <- function(X,lambda=NULL,densitymethod=c("kernel", "Voronoi"),r=NULL,rmax=NULL,f=.2,nrep=200,
                           distancetype=c("path","euclidean"),bw=c("scott","lppl"),...){
@@ -198,10 +202,10 @@ print.linearJ <- function(X){
 }
 
 #' @export
-plot.linearJ <- function(X,...){
-  plot(attr(X,"r"),X$LinearJinhom,type = "l",xlab = "r",ylab = expression(italic(hat(J)[L][","][inhom](r))),...)
-  points(attr(X,"r"),rep(1,length(attr(X,"r"))),lty=2,col=2,type = "l")
-  if (abs(max(X$LinearJinhom)-1) > abs(min(X$LinearJinhom)-1)){
+plot.linearJ <- function(x,...){
+  plot(attr(x,"r"),x$LinearJinhom,type = "l",xlab = "r",ylab = expression(italic(hat(J)[L][","][inhom](r))),...)
+  points(attr(x,"r"),rep(1,length(attr(x,"r"))),lty=2,col=2,type = "l")
+  if (abs(max(x$LinearJinhom)-1) > abs(min(x$LinearJinhom)-1)){
     legend("topleft",inset = 0.05,legend = c(expression(italic(hat(J)[L][","][inhom](r))),expression(italic({J[L][","][inhom]^{theo}}(r))))
            ,col = c(1,2),lty = c(1,2))
   }
