@@ -1,4 +1,7 @@
 #' @import spatstat
+#' @import spatstat.geom
+#' @import spatstat.linnet
+#' @import spatstat.core
 #' @import stats
 #' @import utils
 #' @import graphics

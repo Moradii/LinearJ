@@ -21,7 +21,7 @@ For a given point pattern or linear network, this function extracts the border o
 Mehdi Moradi <m2.moradi@yahoo.com>
 }
 \value{
-an object of class \link[spatstat]{lpp} for which points represent the border points ofthe underlying network.
+an object of class \link[spatstat.linnet]{lpp} for which points represent the border points ofthe underlying network.
 }
 
 \references{
@@ -34,5 +34,5 @@ border.lpp(x)
 }
 
 \seealso{
-\link[spatstat]{lpp}, \link[spatstat]{rSSI}
+\link[spatstat.linnet]{lpp}, \link[spatstat.core]{rSSI}
 }

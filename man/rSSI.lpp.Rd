@@ -42,7 +42,11 @@ Cronie, O., Moradi, M., and Mateu, J (2020) Inhomogeneous higher-order summary s
 }
 
 \value{
-an object of class \link[spatstat]{lpp}.
+an object of class \link[spatstat.linnet]{lpp}.
+}
+
+\seealso{
+\link[spatstat.core]{rSSI}
 }
 
 \examples{

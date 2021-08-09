@@ -1,4 +1,7 @@
 #' @import spatstat
+#' @import spatstat.geom
+#' @import spatstat.linnet
+#' @import spatstat.core
 #' @import stats
 #' @import utils
 #' @export
@@ -10,7 +13,7 @@ rSSI.lpp <-  function(n,r,L,giveup = 1000,nsim=1,...){
     }))
   }
 
-  if((n*r)> sum(lengths.psp(L$lines)))
+  if((n*r)> sum(lengths_psp(L$lines)))
     stop("n should be less than tha ratio of total length of network over r")
   m <- 0
   X <- as.lpp(runifpointOnLines(1,L),L=L,...)

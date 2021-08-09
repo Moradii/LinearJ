@@ -64,7 +64,7 @@ The function is currently slow.
 }
 
 \seealso{
-\link[LinearJ]{LinearJinhom}, \link[spatstat]{envelope.lpp}
+\link[LinearJ]{LinearJinhom}, \link[spatstat.linnet]{envelope.lpp}
 }
 
 \references{
