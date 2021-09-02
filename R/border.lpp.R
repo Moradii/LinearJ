@@ -6,31 +6,32 @@
 #' @import utils
 #' @export
 border.lpp <- function(X){
-
+  
   if (any(class(X)=="linnet")){
-    m <- X$m
+    
+    vdx <- vertexdegree(X)
     p <- X$vertices
     l <- X
-  }
-
-  if (any(class(X)=="lpp")){
-    m <- X$domain$m
+    
+    vers <- as.data.frame(p)
+    vers <- vers[which(vdx==1),]
+    
+    borderpoints <- lpp(vers,l,check=FALSE)
+    
+  } else if (any(class(X)=="lpp")){
+    
+    vdx <- vertexdegree(X$domain)
     p <- X$domain$vertices
     l <- domain(X)
+    
+    vers <- as.data.frame(p)
+    vers <- vers[which(vdx==1),]
+    
+    borderpoints <- lpp(vers,l,check=FALSE)
   }
-
-  rowsum <- numeric()
-
-  for (i in 1:length(m[,1])){
-    rowsum[i]=sum(m[i,])
+  else{
+    stop("X should be either of class linnet or lpp")
   }
-
-  verticesx <- p$x
-  verticesy <- p$y
-  borderx <- verticesx[which(rowsum==1)]
-  bordery <- verticesy[which(rowsum==1)]
-
-   borderpoints <- lpp(data.frame(borderx,bordery),l,check=FALSE)
-
+  
   return(borderpoints)
 }
