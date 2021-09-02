@@ -108,7 +108,7 @@ LinearJinhom <- function(X,lambda=NULL,densitymethod=c("kernel", "Voronoi"),r=NU
   }
 
   # nearest neighbour calculation
-  Hlpp <- parallel::mclapply(X=1:length(r), function(i){
+  Hlpp <- lapply(X=1:length(r), function(i){
     sum <- 0
     OK <- (Xtoborder > r[i])
     H_seq_OK <- which(OK)
@@ -143,7 +143,7 @@ LinearJinhom <- function(X,lambda=NULL,densitymethod=c("kernel", "Voronoi"),r=NU
   Hlpp <- unlist(Hlpp)
   ################################################################
   # empty space calculation
-  Flpp <- parallel::mclapply(X=1:length(r), function(i){
+  Flpp <- lapply(X=1:length(r), function(i){
     sum <- 0
     OK <- (gridtoborder > r[i])
     F_seq_OK <- which(OK)
